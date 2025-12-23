@@ -1,8 +1,8 @@
 obj-m := tsulab.o
 
-KERNEL_DIR := /lib/modules/$(shell uname -r)/build
+KERNEL_DIR ?= /lib/modules/$(shell uname -r)/build
 
-PWD := $(shell pwd)
+PWD := $(CURDIR)
 
 all:
 	$(MAKE) -C $(KERNEL_DIR) M=$(PWD) modules
